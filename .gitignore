@@ -11,3 +11,8 @@ __pycache__/
 *.pyc
 patch_*.py
 t1/
+gen[A-Z]/
+w[0-9]/
+run[0-9]/
+full[A-Z]/
+t[0-9]/
