@@ -69,6 +69,46 @@ prediction, it gives a meaningless one.
 | Complexity | Shannon entropy over residues at or above 0.35, which removes homopolymers |
 | Top 100 | at most 80% Levenshtein identity to any reference in `data/antibacterial.fasta`, and at most 80% to any peptide already selected |
 
+## Selection and ranking procedure
+
+Every step below is executed by `uv run generate`; none of it is done by hand.
+
+1. **Sample.** A code is drawn from the QCBM's Born distribution over the 4096
+   binary latent codes. Length is drawn from a Gaussian centred at 16 residues
+   with standard deviation 8, truncated to the allowed 8 to 50.
+2. **Decode.** A WaveNet decoder turns the code into a peptide. Cysteine,
+   aspartate and glutamate are masked at the logit level, so they are never
+   generated rather than generated and discarded.
+3. **Gate.** A candidate is kept only if it uses the 20 standard amino acids, is
+   8 to 50 residues, is not already in the library, is not identical to any
+   sequence in `data/antibacterial.fasta`, carries at least three K or R, has no
+   single residue above 40% of its length, repeats no 6-mer within itself, and
+   has residue entropy at or above 0.35.
+4. **Repeat** until the library holds exactly the requested number of unique
+   sequences.
+5. **Rank.** Each sequence is scored as `0.75 x composite + 0.25 x MIC term`.
+   The composite is the project's five-term score over membrane insertion,
+   amphipathicity, net charge against a length-dependent optimum, protease
+   stability, helix propensity and complexity. The MIC term folds the predicted
+   Gram-negative MIC into [0, 1], with 3 ug/mL mapping to 1 and 316 ug/mL to 0.
+   Ties are broken on the sequence itself, so ordering never depends on
+   dictionary iteration.
+6. **Filter the top list.** Walking the ranking in order, a candidate is skipped
+   if it exceeds 80% Levenshtein identity against any of the 39,448 references,
+   or against any peptide already selected. The first 100 survivors are the
+   submission.
+
+## Manual intervention
+
+None. No sequence was hand-picked, hand-edited, hand-removed or reordered. The
+library and the top 100 are whatever the command above produces from the seed,
+and two runs of it produce byte-identical files.
+
+The human decisions are all upstream of the run and are visible in the code: the
+choice of generator, the terms in the composite and their weights, the
+thresholds in the gate, and the decision to add the MIC prior at a quarter weight
+rather than let it replace the composite.
+
 ## Reproducibility
 
 `uv run generate` twice produces byte-identical `library.fasta` and `top.fasta`.
