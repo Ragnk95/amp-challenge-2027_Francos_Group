@@ -10,3 +10,4 @@ run2/
 __pycache__/
 *.pyc
 patch_*.py
+t1/
