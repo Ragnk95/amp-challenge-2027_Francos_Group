@@ -2,6 +2,47 @@
 
 ## Abstract
 
+`uv run generate` produces the submitted library and top 100. It samples a
+12-qubit quantum circuit Born machine (ry-rz-cnot-ring, three layers) used as the
+prior over the binary latent space of a peptide autoencoder: a code is drawn from
+the Born distribution over 4096 states and a WaveNet decoder turns it into a
+peptide, with cysteine, aspartate and glutamate masked at the logit level so they
+are never generated. Against the 3000-code training corpus the prior sits 15.4%
+closer in KL divergence than a uniform proposal over the same space (1.8489
+against 2.1867 bits, Born entropy 11.65 of 12).
+
+Candidates pass a compliance gate (20 standard amino acids, 8 to 50 residues, no
+duplicates, nothing identical to a known antibacterial, at least three K or R, no
+residue above 40% of the sequence, no repeated 6-mer, residue entropy at least
+0.35), and the library is filled to exactly 50,000 unique peptides. Ranking is a
+six-term physicochemical composite (Wimley-White membrane insertion, Eisenberg
+hydrophobic moment, net charge against a length-dependent optimum, protease
+stability, helix propensity, sequence complexity) plus a DBAASP-trained MIC prior
+at a quarter weight, with ties broken on the sequence itself. The top 100 is then
+filtered to at most 80% Levenshtein identity against every reference and against
+every peptide already selected.
+
+Every checkpoint this needs is in `checkpoint/`, every filter runs from committed
+data, and two runs of the command produce byte-identical FASTA files.
+
+### Scope of the sections below
+
+What follows is the research programme this entry came out of: a six-generator
+pipeline with a Thompson bandit over Pareto hypervolume contribution, scored with
+APEX, HMD-AMP, HemoPI2 and an ESM3 structure call. **It is context, not the
+submitted method.** Its components cannot ship: two are third-party weights of
+0.9 and 1.3 GB under their own terms, and the ESM3 call needs a personal API
+credential and returns a different value for the same peptide on a later call,
+which a submission required to reproduce byte for byte cannot contain.
+
+Any figure quoted below, including 50,050 sequences evaluated, the 0.688 maximum
+pairwise identity and the 4.33 uM median APEX MIC, describes that research run
+(run A, seed 20260929). **None of it describes the output of `uv run generate`.**
+The numbers for the submitted set are in `generate/ranking_top100.csv` and
+`generate/wetlab_panel_top100.csv`.
+
+## Research context: the six-generator pipeline
+
 Antimicrobial peptides are candidates for the development of alternatives to conventional antibiotics, and generative models have expanded the possibilities for their de novo design. However, simultaneously optimizing antimicrobial activity and selectivity remains a challenge, as the physicochemical properties that favor activity can also increase toxicity. We present a pipeline that integrates six heterogeneous generators, including diffusion in the ESM latent space, parallel masked infilling with PepMLM-650M, and a VQ-VAE with a simulated variational circuit. The sequence budget is distributed among the generators at each round through Thompson sampling, using a reward based on the hypervolume contribution to a cumulative Pareto front. The two objectives considered are predicted antimicrobial activity and an estimate of selectivity defined as one minus the predicted hemolytic risk. Screening uses a five-term composite score, with an additional risk penalty associated with the membrane context. The workflow includes refinement through mutational operators, compliance filters, and diversity-based selection, with deterministic final ranking. Over 62 rounds, 50,050 sequences were evaluated, and a library of 50,000 was obtained, all of which passed the internal compliance check. Among the one hundred candidates selected after diversity filtering, the maximum pairwise identity was 0.688, and the mean maximum similarity of each candidate to the 200 seed sequences was 0.366. The minimum inhibitory concentration predicted by APEX against Escherichia coli ATCC 11775 had a median of 4.33 µM. The run also revealed near-zero hypervolume contributions among the finalists, indicating a limitation to be investigated in reward updating. The pipeline produced a library and a selection of candidates for experimental evaluation in the AMP Challenge.
 
 ## Training data, external resources and filtering
@@ -70,28 +111,22 @@ Human intervention was confined to the code. Eight corrections were applied befo
 
 Because hypervolume contribution feeds back into generator selection, these corrections required a fresh generation run rather than a rescore of the existing library. A rescore would reorder what already exists but cannot recover candidates the previous scoring rule prevented from being generated.
 
+
 ---
 
-## Scope note: what this repository runs
+## Training data disclosure
 
-The method described above is the full research pipeline: six generator arms, a
-Thompson bandit over hypervolume contribution, APEX and HMD-AMP for activity,
-HemoPI2 for haemolysis, and ESM3-open for secondary structure. That is the work.
+The sequences behind both checkpoints are committed, not merely described.
 
-The code in this repository is a self-contained distillation of it, and the
-difference is deliberate rather than cosmetic. Three of those components cannot
-be redistributed: APEX and HMD-AMP are third-party weights of 0.9 and 1.3 GB
-under their own terms, and the ESM3 call needs a personal API credential. A
-fourth, the ESM3 helix prediction, is a sampled structure prediction that returns
-a different value for the same peptide on a later call, which a submission
-required to reproduce byte for byte cannot contain.
+| file | rows | what it is |
+|---|---|---|
+| `data/training/qcbm_training_sequences.fasta` | 3,000 | the peptides whose binary latent codes the Born machine was fitted to; 8 to 30 residues |
+| `data/training/nr80_reference.csv` | 2,348 | the non-redundant 80% identity reference set, with the source database and original identifier for each sequence |
+| `data/antibacterial.fasta` | 39,448 | the challenge's own reference, used here as an exclusion filter |
+| `data/external/dbaasp_mic_regressor.json` | 34,588 measurements | the fitted MIC model; the DBAASP export behind it is redistributable only under DBAASP's terms, so the fitted coefficients ship and the raw export does not |
 
-So `uv run generate` samples from the quantum circuit Born machine prior over the
-peptide latent space, applies the same compliance gate documented in section 3,
-and ranks with the terms that can be recomputed from what is committed here plus
-a DBAASP MIC prior. Everything it does is reproducible by anyone who clones this
-repository; everything it omits is named above.
-
-Figures quoted in the abstract, including the median APEX MIC of 4.33 uM and the
-0.688 maximum pairwise identity, come from the research run (run A, seed
-20260929). They describe that run, not the output of this entry point.
+Source databases for the generative corpus: DBAASP, DRAMP and APD3, merged,
+globally deduplicated, reduced at 80 to 90% identity and filtered to 8 to 50
+residues by `combine_amp_databases.py`. The merge rewrites headers, so the
+combined file cannot attribute an individual sequence to one database;
+`nr80_reference.csv` keeps that attribution where it survives.
