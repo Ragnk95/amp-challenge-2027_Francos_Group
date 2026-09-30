@@ -1,0 +1,10 @@
+generate/
+.venv/
+__pycache__/
+*.pyc
+fullA/
+fullB/
+genA/
+genB/
+run1/
+run2/
