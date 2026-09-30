@@ -12,6 +12,14 @@ uv run generate --n-sequences 50000 --top-k 100 --seed 42 --length 50
 
 ## Abstract
 
+The abstract for this submission is [`ABSTRACT.md`](ABSTRACT.md). It describes the
+full research pipeline, together with the training data, the external databases
+and predictors, the three filter layers and their thresholds, and the statement on
+manual intervention. Its closing section sets out precisely which of those
+components run in this repository and which cannot be redistributed.
+
+What follows here is the shorter description of the entry point itself.
+
 Antimicrobial peptides are cationic and amphipathic, and the search space is
 large enough that the sampling distribution matters more than the filter applied
 afterwards. This submission draws from a 12-qubit parameterised quantum circuit
