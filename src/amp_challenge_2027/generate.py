@@ -313,7 +313,16 @@ def generate(n_sequences: int, *, length: int = 50, seed: int = 42) -> list[str]
         need = n_sequences - len(out)
         batch = max(1024, min(200_000, need * 4))
         codes = rng.choice(born.size, size=batch, p=born)
-        lengths = rng.integers(lo, hi + 1, size=batch)
+        # Length is drawn from the range natural antimicrobial peptides occupy
+        # rather than uniformly up to the cap. Uniform sampling to 50 put the
+        # mean at 34.8, which is both unrepresentative (the research pipeline's
+        # own top 100 averaged 14.9 residues) and expensive, because the decoder
+        # is autoregressive and therefore linear in length. The distribution is
+        # a Gaussian centred at 16 with a standard deviation of 8, truncated to
+        # the allowed range, so the long tail is still reachable.
+        _grid = np.arange(lo, hi + 1)
+        _w = np.exp(-0.5 * ((_grid - 16.0) / 8.0) ** 2)
+        lengths = rng.choice(_grid, size=batch, p=_w / _w.sum())
         for code, seq_len in zip(codes, lengths):
             if len(out) >= n_sequences:
                 break
@@ -331,6 +340,11 @@ def generate(n_sequences: int, *, length: int = 50, seed: int = 42) -> list[str]
                     temperature=0.8,
                     top_k=10,
                     repetition_penalty=1.2,
+                    # Generate inside the design space instead of generating
+                    # freely and discarding afterwards. Without this the gate
+                    # threw away 85% to 97% of every decode, because a peptide of
+                    # any length is very unlikely to avoid C, D and E by chance.
+                    exclude_aas="".join(sorted(FORBIDDEN_AAS)),
                 )
             except Exception:
                 continue

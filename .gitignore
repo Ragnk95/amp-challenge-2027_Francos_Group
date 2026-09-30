@@ -8,3 +8,5 @@ genA/
 genB/
 run1/
 run2/
+__pycache__/
+*.pyc

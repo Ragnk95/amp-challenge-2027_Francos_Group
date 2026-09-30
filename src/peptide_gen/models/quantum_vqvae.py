@@ -62,6 +62,20 @@ _AA_VOCAB = list("ACDEFGHIKLMNPQRSTVWY")
 _AA_TOKEN_IDS = list(range(4, 24))  # [4, 5, ..., 23]
 
 
+def _token_ids_for(letters: str) -> list[int]:
+    """Token ids that decode to any of ``letters``.
+
+    Mirrors the id-to-letter rule used when no tokenizer is present
+    (``_AA_VOCAB[i % len(_AA_VOCAB)]``), so a mask built here always matches what
+    the decoder would actually emit.
+    """
+    wanted = set(letters.upper())
+    return [
+        t for t in _AA_TOKEN_IDS
+        if _AA_VOCAB[t % len(_AA_VOCAB)] in wanted
+    ]
+
+
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
@@ -641,6 +655,7 @@ class QuantumVQVAE(nn.Module):
         temperature: float = 0.0,
         top_k: int = 0,
         repetition_penalty: float = 1.0,
+        exclude_aas: str = "",
     ) -> str:
         """Quantum latent vector z → amino acid sequence string.
 
@@ -683,6 +698,12 @@ class QuantumVQVAE(nn.Module):
                 (_ESMC_VOCAB,), float("-inf"), device=z.device, dtype=z.dtype
             )
             aa_bias[torch.tensor(_AA_TOKEN_IDS, dtype=torch.long, device=z.device)] = 0.0
+            # Residues the caller's design space forbids never get sampled,
+            # instead of being generated and discarded downstream.
+            if exclude_aas:
+                _drop = _token_ids_for(exclude_aas)
+                if _drop:
+                    aa_bias[torch.tensor(_drop, dtype=torch.long, device=z.device)] = float("-inf")
             tokens = [0]   # BOS
             # v9 — pass target length when length conditioning is active so
             # decode respects the requested seq_len more faithfully.
@@ -915,6 +936,7 @@ class QuantumVQVAE(nn.Module):
         temperature: float = 0.0,
         top_k: int = 0,
         repetition_penalty: float = 1.0,
+        exclude_aas: str = "",
     ) -> str:
         """Binary code ``{0,1}^n`` → peptide via the trained decoder.
 
@@ -929,6 +951,7 @@ class QuantumVQVAE(nn.Module):
                 temperature=temperature,
                 top_k=top_k,
                 repetition_penalty=repetition_penalty,
+                exclude_aas=exclude_aas,
             )
 
     @property
