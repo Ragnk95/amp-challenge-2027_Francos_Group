@@ -6,7 +6,7 @@ network call and no credential.
 
 ## 1. Requirements
 
-- `git`
+- `git` 2.10 or later, for `.gitattributes` to be honoured as written
 - [`uv`](https://docs.astral.sh/uv/) 0.12 or later — it installs the Python
   interpreter itself, so no system Python is needed
 - about 2 GB of disk for the virtual environment, and 3 GB of RAM (measured
@@ -84,6 +84,18 @@ separate copies of the repository have produced them, one of which was the
 clone the challenge validator made from GitHub. If yours do not match, the
 environment differs from section 7 below; the FASTA files in the repository are
 the submission.
+
+The checksums are of the stored bytes, which use LF line endings. `.gitattributes`
+sets `* -text` so no checkout rewrites them: without it, cloning on a machine
+with `core.autocrlf=true`, the Windows default, converts the committed FASTA and
+CSV files to CRLF and every checksum here fails against a repository that is
+correct. If you see a mismatch on the *committed* files while the generated ones
+match, check that first:
+
+```bash
+git config core.autocrlf        # should not override .gitattributes
+git ls-files --eol generate/    # expect w/lf, not w/crlf
+```
 
 ## 5. Regenerate the score tables
 

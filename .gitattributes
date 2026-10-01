@@ -1,0 +1,6 @@
+# Every file in this repository is byte-exact on purpose: the checksums in
+# REPRODUCE.md are of the stored bytes, and `generate` writes LF endings on
+# every platform. Without this, a checkout with core.autocrlf=true (the
+# Windows default) rewrites the FASTA and CSV files to CRLF, and every
+# checksum in section 4 fails against a repository that is in fact correct.
+* -text
