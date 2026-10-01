@@ -114,10 +114,22 @@ uv run python scripts/wetlab_panel.py       # generate/wetlab_panel_top100.csv
 9737fd0bb0f5e402830363c3f1c6bd9c1fa035450e223ada8d8ade46c07b3548  generate/wetlab_panel_top100.csv
 ```
 
+| script | measured | peak memory | writes |
+|---|---|---|---|
+| `export_ranking.py` | 1 min 28 s | 788 MB | `top.fasta`, `ranking_top100.csv` |
+| `export_ranking.py --full` | 1 min 32 s | 788 MB | the above plus `ranking_library.csv`, 50,000 rows |
+| `wetlab_panel.py` | 0.1 s | 34 MB | `wetlab_panel_top100.csv` |
+
 `export_ranking.py` re-runs the ranking and the diversity walk independently of
 the entry point and writes `top.fasta` again; it must reproduce the same 100
 sequences in the same order, which is a second, independent check on step 4.
-Add `--full` to score all 50,000 instead of the top 100.
+Almost all of its time is the identity walk against the 39,448 references, which
+is why `--full` costs only four seconds more. `ranking_library.csv` is not
+committed, since it is derivable from what is.
+
+`wetlab_panel.py` is fast because it is linear algebra on short feature vectors:
+two fitted regressions over fifteen and sixteen descriptors, for a hundred
+peptides. It loads no model weights and makes no network call.
 
 `wetlab_panel.py` converts the predicted MIC from ug/mL to uM, applies the
 challenge's 16 uM potency threshold, and derives MIC50, MIC90, HC50 and the
@@ -205,8 +217,10 @@ b1208b7e45b7268a2d6eaa59d7727019116121cac851fbdae65ed919479d4205  data/training/
 
 The four flags in section 3 are the only knobs, and changing any of them changes
 the output. `--seed 43` gives a different, equally valid library;
-`--n-sequences 200` gives a quick smoke test that exercises every code path in
-about a minute. Nothing else about the method is configurable at the command
+`--n-sequences 200` gives a smoke test that exercises every code path in 48
+seconds. The smoke test still peaks near 2 GB, because what fills memory is the
+decoder and the 39,448 references rather than the library, so a machine that
+cannot run the full generation cannot run the short one either. Nothing else about the method is configurable at the command
 line, by design: the thresholds, the scoring weights and the masked residues are
 in the source, so a reviewer reads them rather than reconstructing them from a
 command history.
