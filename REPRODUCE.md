@@ -9,7 +9,8 @@ network call and no credential.
 - `git`
 - [`uv`](https://docs.astral.sh/uv/) 0.12 or later — it installs the Python
   interpreter itself, so no system Python is needed
-- about 2 GB of disk for the virtual environment, and 6 GB of RAM
+- about 2 GB of disk for the virtual environment, and 3 GB of RAM (measured
+  peak 1.9 GB)
 - no GPU: the committed files were produced on CPU, and the code never calls
   `.cuda()`
 
@@ -48,9 +49,12 @@ generate/library.fasta     50,000 unique peptides
 generate/top.fasta         the 100 selected candidates, in rank order
 ```
 
-The run is single-threaded and CPU-bound. For scale: the challenge's own
-validator, which generates the library twice and also runs the pairwise
-similarity checks, took 3 h 16 min end to end on the host in section 7.
+Measured wall clock for this command on the host in section 7: **1 h 01 min
+38 s**, at 100% of one core and a peak of 1.9 GB resident. It is
+single-threaded and CPU-bound, so a faster core finishes sooner and extra cores
+do not help. The challenge's own validator, which generates the library twice
+and also runs the pairwise similarity checks, took 3 h 16 min end to end on the
+same host.
 
 Two messages on stderr are expected and harmless:
 
@@ -75,8 +79,11 @@ d4599b5c29110065db9a9d7dc981c4ac9ee3459a0f35375f1a0d7c871aed97a4  generate/libra
 0b843fb267fa83257d9daaff4bc8be344ed15cc66cacdaef555ca495c66f9eb2  generate/top.fasta
 ```
 
-These must match byte for byte. If they do not, the environment differs from
-section 7 below; the FASTA files in the repository are the submission.
+These must match byte for byte. Three independent runs of the command on
+separate copies of the repository have produced them, one of which was the
+clone the challenge validator made from GitHub. If yours do not match, the
+environment differs from section 7 below; the FASTA files in the repository are
+the submission.
 
 ## 5. Regenerate the score tables
 
