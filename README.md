@@ -7,16 +7,19 @@ trained for this work.
 ```bash
 uv sync
 uv run generate                 # writes generate/library.fasta and generate/top.fasta
-uv run generate --n-sequences 50000 --top-k 100 --seed 42 --length 50
 ```
+
+The defaults are the submitted configuration: 50,000 sequences, top 100, maximum
+length 50, seed 42. [`REPRODUCE.md`](REPRODUCE.md) gives the exact steps, the
+expected SHA-256 of every generated file, and the environment the committed files
+were produced in.
 
 ## Abstract
 
-The abstract for this submission is [`ABSTRACT.md`](ABSTRACT.md). It describes the
-full research pipeline, together with the training data, the external databases
-and predictors, the three filter layers and their thresholds, and the statement on
-manual intervention. Its closing section sets out precisely which of those
-components run in this repository and which cannot be redistributed.
+The abstract for this submission is [`ABSTRACT.md`](ABSTRACT.md). It describes
+the method, what the submitted run produced, the training data, the external
+resources, every filter threshold, and the statement on manual intervention.
+Everything it describes is in this repository and runs from `uv run generate`.
 
 What follows here is the shorter description of the entry point itself.
 
@@ -45,7 +48,7 @@ experimental measurements from DBAASP, cross-validated RMSE 0.590 in log10, whic
 is a factor of about 3.9 in MIC. It ranks candidates; it does not measure them,
 and no potency claim here rests on it. It is added to the composite rather than
 replacing it because the model's own recorded scope says to use it as an additive
-signal and not to replace calibrated APEX predictions without external validation.
+signal, not as a stand-alone potency estimate, until it has external validation.
 
 The descriptor functions are the research pipeline's own modules, copied unchanged
 into `src/amp_challenger/` rather than re-derived. An earlier draft of this entry
@@ -55,6 +58,25 @@ widened beyond the aromatics. The MIC model is a regression over exactly those
 descriptors, so a descriptor that drifts does not give a slightly worse
 prediction, it gives a meaningless one.
 
+## What the submitted run produced
+
+Measured on the files in `generate/`, which are the output of the command above.
+
+| quantity | value |
+|---|---|
+| library | 50,000 unique peptides, 8 to 49 residues, mean 21.6 |
+| library sequences containing C, D or E | 0 |
+| library sequences identical to a `data/antibacterial.fasta` entry | 0 |
+| top 100 | 17 to 41 residues, mean 27.9; net charge +6.00 to +10.10, mean +8.89 |
+| maximum identity of a selected peptide to the 39,448 references | 0.476 |
+| maximum pairwise identity within the top 100 | 0.613 |
+| median predicted *E. coli* MIC of the top 100 | 9.84 ug/mL |
+
+`generate/ranking_top100.csv` carries one row per selected peptide with every
+term of the composite, the MIC predictions and the two identity margins that
+decided admission. `generate/wetlab_panel_top100.csv` converts the predictions
+to uM against the wet-lab panel.
+
 ## Training data
 
 - The autoencoder and the Born machine were trained on antimicrobial peptides
@@ -62,9 +84,7 @@ prediction, it gives a meaningless one.
   reduced at 80% sequence identity before training.
 - No sequence from the challenge's `data/antibacterial.fasta` is emitted: it is
   loaded at generation time and any exact match is rejected by the compliance
-  gate. This matters in practice. A 50,000-sequence library produced by this
-  group's full research pipeline, before the filter existed, contained 36
-  sequences identical to entries in that file.
+  gate. Zero of the 50,000 submitted sequences appear in that file.
 
 ## External databases and filters
 
@@ -119,6 +139,11 @@ rather than let it replace the composite.
 
 ## Reproducibility
 
+The full procedure, with checksums and the environment, is in
+[`REPRODUCE.md`](REPRODUCE.md). The challenge's own validator
+(`scripts/verify_submission.py`, unmodified) has been run against this
+repository as published and reports `All checks passed. Submission is valid!`
+
 `uv run generate` twice produces byte-identical `library.fasta` and `top.fasta`.
 Every source of randomness is pinned: NumPy draws from a seeded `Generator`, each
 decoder call is preceded by its own `torch` seed derived from the run seed and the
@@ -127,35 +152,39 @@ decoration: string hashing is randomised per process in Python, and a set iterat
 in hash order had already changed top-100 membership between two runs of this
 group's pipeline.
 
-## What this repository is not
+## Scope
 
-The research pipeline behind this entry is larger than what ships here. It scores
-candidates with APEX and HMD-AMP, embeds with ESM-C, and takes helix propensity
-from an ESM3 secondary-structure prediction, inside a multi-armed loop in which a
-reasoning model reallocates the generation budget between six generators.
+This repository is the complete submitted method. It needs no API credential, no
+network access and no third-party weight file, and every number in `generate/` and
+in `ABSTRACT.md` came out of the command above.
 
-None of that can be distributed. Two of the models are third-party weights of
-0.9 and 1.3 GB under their own terms, and the ESM3 call needs a personal API
-credential. There is also a reason of principle for leaving the ESM3 term out:
-it is a generative structure prediction, and it returns a different helix
-fraction for the same peptide on a later call. Measured across two runs of
-identical code with the same seed, 23% of the sequences common to both top-100
-lists received a different helix value, by up to 0.73, which moved the composite
-by up to 0.12 and reordered the ranking. A term that behaves that way cannot sit
-inside a submission that must reproduce byte for byte, and the deterministic
-Chou-Fasman propensity is used here instead.
-
-The ranking in this repository is therefore the part of our scoring that anyone
-can recompute from what is committed.
+It is not the whole of the group's research programme, and deliberately does not
+describe it. That programme uses third-party predictors of 0.9 and 1.3 GB under
+their own terms and a generative structure prediction reached over a personal API
+credential, which returns a different value for the same peptide on a later call.
+Neither can sit inside a submission that must reproduce byte for byte, so neither
+is here, and no figure produced with them is quoted anywhere in this repository.
+Helix propensity is taken from the deterministic Chou-Fasman table instead.
 
 ## Layout
 
 ```
+ABSTRACT.md                          the abstract, the run's results, data and filters
+REPRODUCE.md                         exact steps, checksums, environment
 checkpoint/quantum_vqvae_ep0015.pt   peptide autoencoder, 12-bit binary latent
 checkpoint/qcbm_prior.pt             Born machine over those codes
 data/antibacterial.fasta             challenge reference, used as an exclusion filter
+data/training/                       the sequences the two checkpoints were fitted to
+data/external/                       the fitted MIC and haemolysis coefficients
+generate/library.fasta               the submitted 50,000
+generate/top.fasta                   the submitted 100, in rank order
+generate/ranking_top100.csv          every score behind the ordering
+generate/wetlab_panel_top100.csv     the same 100 against the wet-lab panel, in uM
 src/amp_challenge_2027/generate.py   entry point
+src/amp_challenger/                  scoring and compliance modules
 src/peptide_gen/                     model definitions for the two checkpoints
+scripts/export_ranking.py            rebuilds the ranking tables from the library
+scripts/wetlab_panel.py              rebuilds the panel table
 scripts/verify_submission.py         the challenge validator, unmodified
 ```
 

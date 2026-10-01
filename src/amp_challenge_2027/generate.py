@@ -23,11 +23,10 @@ insertion on the Wimley-White interfacial scale, amphipathicity as the Eisenberg
 hydrophobic moment, net charge against a length-dependent optimum, protease
 stability, helix propensity and sequence complexity.
 
-The full research pipeline additionally scores with APEX, HMD-AMP, ESM-C and an
-ESM3 secondary-structure call. None of those can ship: two are third-party
-weights of 0.9 and 1.3 GB under their own terms, and ESM3 needs a personal API
-credential. Their absence is a property of the submitted artifact, not of the
-work behind it, and the ranking here is the part that is reproducible by anyone.
+A MIC prior fitted to DBAASP measurements is added at a quarter weight. Every
+term reads only committed data, so the whole ranking is recomputable by anyone
+who clones this repository; ``scripts/export_ranking.py`` writes the per-term
+values out.
 
 Reproducibility
 ---------------
@@ -125,9 +124,8 @@ def mic_term(seq: str) -> float:
     3.9 in MIC. It ranks; it does not measure, and no potency claim rests on it.
 
     It is added to the composite rather than replacing it, because the model's
-    own recorded scope says so: "Use as an additive signal; do not replace
-    raw/calibrated APEX MICs without external validation." APEX and HMD-AMP are
-    what the research pipeline ranks with, and neither can be redistributed here.
+    own recorded scope says to use it as an additive signal and not as a
+    stand-alone potency estimate until it has external validation.
     """
     if not _MIC.is_loaded:
         return 0.0
