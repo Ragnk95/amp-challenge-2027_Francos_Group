@@ -1,0 +1,200 @@
+>rank001 score=0.699022 composite=0.695202 mic_term=0.710485 len=26 charge=+9.00 mic_gram_neg=12.0ug/mL identity_to_reference=0.4231 identity_to_selected=0.0 mic50=3.29uM mic90=6.41uM hc50=26.21uM safety_window=7.97 success_covered=100.0%
+GRMMTFSARNVRRNMRRMMRMRVRMM
+>rank002 score=0.698891 composite=0.698154 mic_term=0.701105 len=28 charge=+9.00 mic_gram_neg=12.53ug/mL identity_to_reference=0.3214 identity_to_selected=0.25 mic50=3.66uM mic90=5.86uM hc50=44.18uM safety_window=12.06 success_covered=100.0%
+FMISRMRTKGRSKFIRKMNVMTKMLIRT
+>rank003 score=0.697406 composite=0.697253 mic_term=0.697865 len=28 charge=+9.20 mic_gram_neg=12.71ug/mL identity_to_reference=0.3929 identity_to_selected=0.25 mic50=3.49uM mic90=6.11uM hc50=35.91uM safety_window=10.29 success_covered=100.0%
+MSIMIRHMRWRIRTIMRTRHNASRFMKR
+>rank004 score=0.695916 composite=0.673441 mic_term=0.763341 len=32 charge=+9.00 mic_gram_neg=9.4ug/mL identity_to_reference=0.325 identity_to_selected=0.2812 mic50=2.52uM mic90=4.21uM hc50=23.65uM safety_window=9.39 success_covered=100.0%
+IIIGKSIIRKFPTKGRSRGTMIMGRTYRTYLR
+>rank005 score=0.695265 composite=0.682582 mic_term=0.733313 len=26 charge=+9.10 mic_gram_neg=10.8ug/mL identity_to_reference=0.3846 identity_to_selected=0.3462 mic50=3.06uM mic90=5.33uM hc50=23.65uM safety_window=7.72 success_covered=100.0%
+RRMFKSMMGIIRKMGHIMMRRIRMYR
+>rank006 score=0.693343 composite=0.687868 mic_term=0.709766 len=28 charge=+9.10 mic_gram_neg=12.04ug/mL identity_to_reference=0.3571 identity_to_selected=0.2188 mic50=3.53uM mic90=6.87uM hc50=64.91uM safety_window=18.38 success_covered=100.0%
+WFRSIISIIKRGNGKHKRKVIKTKTMTM
+>rank007 score=0.692553 composite=0.704258 mic_term=0.657436 len=22 charge=+8.00 mic_gram_neg=15.32ug/mL identity_to_reference=0.3636 identity_to_selected=0.2308 mic50=4.94uM mic90=7.14uM hc50=59.45uM safety_window=12.03 success_covered=100.0%
+MMIMIRFSKRIIRKMTKTKKTF
+>rank008 score=0.69182 composite=0.680856 mic_term=0.724712 len=27 charge=+9.10 mic_gram_neg=11.24ug/mL identity_to_reference=0.3333 identity_to_selected=0.375 mic50=3.83uM mic90=6.65uM hc50=52.74uM safety_window=13.76 success_covered=100.0%
+YIMWKHIIRKMTIIRKNRGRTNSRMTR
+>rank009 score=0.691652 composite=0.683391 mic_term=0.716434 len=26 charge=+9.10 mic_gram_neg=11.67ug/mL identity_to_reference=0.4231 identity_to_selected=0.3462 mic50=4.01uM mic90=6.32uM hc50=39.12uM safety_window=9.75 success_covered=100.0%
+SMPATMVRRGRMRHRMYRIMIRRMRW
+>rank010 score=0.691303 composite=0.69989 mic_term=0.665543 len=22 charge=+8.00 mic_gram_neg=14.75ug/mL identity_to_reference=0.4091 identity_to_selected=0.3077 mic50=5.79uM mic90=8.99uM hc50=61.46uM safety_window=10.62 success_covered=100.0%
+GRIAAVVMRNAFRKSRRWKGRS
+>rank011 score=0.690825 composite=0.67088 mic_term=0.750659 len=26 charge=+9.20 mic_gram_neg=9.97ug/mL identity_to_reference=0.4615 identity_to_selected=0.3214 mic50=2.82uM mic90=4.26uM hc50=29.04uM safety_window=10.29 success_covered=100.0%
+IIIRIIWRGARSHHRRVVRRTVVSRR
+>rank012 score=0.689901 composite=0.681563 mic_term=0.714917 len=25 charge=+9.10 mic_gram_neg=11.75ug/mL identity_to_reference=0.4 identity_to_selected=0.3929 mic50=3.84uM mic90=5.58uM hc50=36.22uM safety_window=9.44 success_covered=100.0%
+SMSMIMISRRWVRRWHRARMVSRRR
+>rank013 score=0.688139 composite=0.651106 mic_term=0.799238 len=36 charge=+9.00 mic_gram_neg=7.97ug/mL identity_to_reference=0.3556 identity_to_selected=0.3889 mic50=1.85uM mic90=3.75uM hc50=16.75uM safety_window=9.04 success_covered=100.0%
+GIIIGIGKSIIGGKGSGVKIKRGGWGITTIRKRNYR
+>rank014 score=0.687467 composite=0.665784 mic_term=0.752515 len=26 charge=+9.10 mic_gram_neg=9.88ug/mL identity_to_reference=0.3571 identity_to_selected=0.4062 mic50=3.32uM mic90=6.99uM hc50=47.08uM safety_window=14.17 success_covered=100.0%
+IIIMIGIKFKRKGRGGGVKMHRRGRV
+>rank015 score=0.687446 composite=0.691533 mic_term=0.675185 len=30 charge=+9.10 mic_gram_neg=14.11ug/mL identity_to_reference=0.3667 identity_to_selected=0.4 mic50=3.77uM mic90=5.69uM hc50=21.98uM safety_window=5.82 success_covered=100.0%
+SSPAAMFFSMPAARHVRRRWMRTRTRMRRI
+>rank016 score=0.687213 composite=0.686637 mic_term=0.688939 len=21 charge=+7.00 mic_gram_neg=13.25ug/mL identity_to_reference=0.4286 identity_to_selected=0.3846 mic50=4.37uM mic90=5.7uM hc50=48.47uM safety_window=11.09 success_covered=100.0%
+IIIGRIITRIIRKPRKYWRSS
+>rank017 score=0.687154 composite=0.697169 mic_term=0.657108 len=22 charge=+8.00 mic_gram_neg=15.34ug/mL identity_to_reference=0.4091 identity_to_selected=0.3462 mic50=5.46uM mic90=8.61uM hc50=80.65uM safety_window=14.78 success_covered=100.0%
+SRMIRFSRMSKRIARFKNRIVP
+>rank018 score=0.687059 composite=0.670646 mic_term=0.736299 len=30 charge=+9.00 mic_gram_neg=10.65ug/mL identity_to_reference=0.3333 identity_to_selected=0.3333 mic50=2.59uM mic90=4.1uM hc50=25.38uM safety_window=9.79 success_covered=100.0%
+MSIIWKIRKIIKRKITKFKYVGRGTMMFSN
+>rank019 score=0.686499 composite=0.671012 mic_term=0.732961 len=33 charge=+9.00 mic_gram_neg=10.82ug/mL identity_to_reference=0.3333 identity_to_selected=0.3636 mic50=2.57uM mic90=5.04uM hc50=30.26uM safety_window=11.78 success_covered=100.0%
+SNIIGSMSIGRIMTFSRSIRKRPSRWSRTRTRM
+>rank020 score=0.686392 composite=0.645666 mic_term=0.80857 len=40 charge=+9.10 mic_gram_neg=7.64ug/mL identity_to_reference=0.4 identity_to_selected=0.35 mic50=1.39uM mic90=3.15uM hc50=9.49uM safety_window=6.84 success_covered=100.0%
+SIGVWGSSWHNGGRGIGRKIARSGPTGGRSGSRRWYRWGR
+>rank021 score=0.686122 composite=0.655336 mic_term=0.77848 len=26 charge=+10.00 mic_gram_neg=8.77ug/mL identity_to_reference=0.4231 identity_to_selected=0.4333 mic50=2.34uM mic90=4.66uM hc50=40.59uM safety_window=17.33 success_covered=100.0%
+SIIISIRRIIRFIRKFKNKKRKVAGM
+>rank022 score=0.685695 composite=0.668619 mic_term=0.736923 len=25 charge=+9.10 mic_gram_neg=10.62ug/mL identity_to_reference=0.44 identity_to_selected=0.4231 mic50=3.77uM mic90=7.04uM hc50=50.47uM safety_window=13.4 success_covered=100.0%
+GTMGHFKRMRRGYRMTRMGRRMGMR
+>rank023 score=0.685586 composite=0.670716 mic_term=0.730195 len=33 charge=+9.10 mic_gram_neg=10.95ug/mL identity_to_reference=0.303 identity_to_selected=0.3636 mic50=2.55uM mic90=4.48uM hc50=16.88uM safety_window=6.63 success_covered=100.0%
+SWMGMIMIGIMGGGMSPMRHRRMRTRVRRRMRM
+>rank024 score=0.68541 composite=0.653735 mic_term=0.780438 len=34 charge=+9.10 mic_gram_neg=8.69ug/mL identity_to_reference=0.3529 identity_to_selected=0.3 mic50=2.13uM mic90=5.26uM hc50=17.34uM safety_window=8.13 success_covered=100.0%
+KHSGGGRGWMGGIRRIRGRTTNVRRGMGRGVVVV
+>rank025 score=0.685035 composite=0.669464 mic_term=0.731749 len=32 charge=+9.10 mic_gram_neg=10.88ug/mL identity_to_reference=0.3514 identity_to_selected=0.4375 mic50=2.09uM mic90=3.89uM hc50=15.41uM safety_window=7.36 success_covered=100.0%
+SIIRSIRFIGFHSVRSRRRVRVRWVRSTVVAS
+>rank026 score=0.684391 composite=0.680514 mic_term=0.696024 len=22 charge=+8.00 mic_gram_neg=12.82ug/mL identity_to_reference=0.4167 identity_to_selected=0.3846 mic50=4.03uM mic90=7.16uM hc50=56.41uM safety_window=13.99 success_covered=100.0%
+SWRSIRIMTTRGRTRFVRVVRR
+>rank027 score=0.684257 composite=0.672635 mic_term=0.719123 len=27 charge=+9.10 mic_gram_neg=11.53ug/mL identity_to_reference=0.3704 identity_to_selected=0.2963 mic50=3.2uM mic90=7.21uM hc50=85.28uM safety_window=26.62 success_covered=100.0%
+INKHMGIKRKIIKKNIKSTVSKFKIIG
+>rank028 score=0.684202 composite=0.679584 mic_term=0.698055 len=26 charge=+9.00 mic_gram_neg=12.7ug/mL identity_to_reference=0.4231 identity_to_selected=0.4615 mic50=3.94uM mic90=6.51uM hc50=25.8uM safety_window=6.54 success_covered=100.0%
+SRMIRFSRARWVRARRRTRMMMATVM
+>rank029 score=0.683965 composite=0.676211 mic_term=0.707228 len=25 charge=+9.10 mic_gram_neg=12.18ug/mL identity_to_reference=0.36 identity_to_selected=0.3846 mic50=3.43uM mic90=6.67uM hc50=41.27uM safety_window=12.02 success_covered=100.0%
+MPGMRFHMRIMMRRRMRVMRMIGRK
+>rank030 score=0.683695 composite=0.697004 mic_term=0.64377 len=23 charge=+8.00 mic_gram_neg=16.31ug/mL identity_to_reference=0.3478 identity_to_selected=0.3929 mic50=5.87uM mic90=8.11uM hc50=54.2uM safety_window=9.24 success_covered=100.0%
+FMWSRMMATRRRNRVIRMTKRMG
+>rank031 score=0.683396 composite=0.668787 mic_term=0.727222 len=32 charge=+9.00 mic_gram_neg=11.11ug/mL identity_to_reference=0.375 identity_to_selected=0.3125 mic50=3.03uM mic90=5.99uM hc50=36.36uM safety_window=11.98 success_covered=91.7%
+ASFKRKIRKNNIGGKFLGRGNTTFKSGGRNVG
+>rank032 score=0.683348 composite=0.68323 mic_term=0.683703 len=25 charge=+9.20 mic_gram_neg=13.57ug/mL identity_to_reference=0.3667 identity_to_selected=0.3846 mic50=4.02uM mic90=6.98uM hc50=76.69uM safety_window=19.08 success_covered=100.0%
+SIFKRIIRKFKRKHMNGHKVRVVQV
+>rank033 score=0.68326 composite=0.66713 mic_term=0.731648 len=25 charge=+9.00 mic_gram_neg=10.88ug/mL identity_to_reference=0.4 identity_to_selected=0.4231 mic50=3.43uM mic90=6.68uM hc50=44.33uM safety_window=12.92 success_covered=100.0%
+GRSRFISYRSMAISRMGRRRMRVRM
+>rank034 score=0.683149 composite=0.67862 mic_term=0.696738 len=37 charge=+9.50 mic_gram_neg=12.78ug/mL identity_to_reference=0.2703 identity_to_selected=0.2703 mic50=2.93uM mic90=5.45uM hc50=25.19uM safety_window=8.59 success_covered=100.0%
+SMKHGSFMAMRHIHRIIPMIKTKMTKRMNMITHSHKR
+>rank035 score=0.683138 composite=0.670175 mic_term=0.722028 len=25 charge=+9.10 mic_gram_neg=11.37ug/mL identity_to_reference=0.44 identity_to_selected=0.3667 mic50=4.65uM mic90=6.54uM hc50=73.58uM safety_window=15.84 success_covered=100.0%
+SKHIWVMMWSLRSRTRRLRTRTRTR
+>rank036 score=0.682828 composite=0.674332 mic_term=0.708315 len=27 charge=+9.30 mic_gram_neg=12.12ug/mL identity_to_reference=0.375 identity_to_selected=0.3704 mic50=3.82uM mic90=7.61uM hc50=63.14uM safety_window=16.54 success_covered=100.0%
+IRMNTMHMGMVKRIRPIHRIIRKRHRM
+>rank037 score=0.682562 composite=0.647617 mic_term=0.787394 len=40 charge=+9.10 mic_gram_neg=8.42ug/mL identity_to_reference=0.35 identity_to_selected=0.35 mic50=1.46uM mic90=3.13uM hc50=6.29uM safety_window=4.31 success_covered=100.0%
+GGHRISTFWMGGRMIGMSYMRWYMRGRSGSSRMSGRTRRS
+>rank038 score=0.682477 composite=0.650003 mic_term=0.779899 len=28 charge=+9.10 mic_gram_neg=8.71ug/mL identity_to_reference=0.3929 identity_to_selected=0.4118 mic50=3.13uM mic90=7.7uM hc50=59.65uM safety_window=19.06 success_covered=100.0%
+SGGSWIRGIRKIGKNGYRRGRGRTTHGR
+>rank039 score=0.682474 composite=0.675097 mic_term=0.704606 len=28 charge=+9.10 mic_gram_neg=12.33ug/mL identity_to_reference=0.3571 identity_to_selected=0.3929 mic50=4.27uM mic90=7.2uM hc50=50.98uM safety_window=11.94 success_covered=91.7%
+MMIIIRIRGNMLIKMNGKRRQRKRTHVA
+>rank040 score=0.682208 composite=0.677758 mic_term=0.695557 len=29 charge=+9.10 mic_gram_neg=12.85ug/mL identity_to_reference=0.3793 identity_to_selected=0.4828 mic50=3.69uM mic90=6.37uM hc50=30.73uM safety_window=8.32 success_covered=100.0%
+GSMMATMVAARHRSMRIRTMRRRTRFSRI
+>rank041 score=0.682195 composite=0.657042 mic_term=0.757657 len=33 charge=+9.00 mic_gram_neg=9.65ug/mL identity_to_reference=0.3636 identity_to_selected=0.4545 mic50=2.63uM mic90=4.0uM hc50=10.44uM safety_window=3.97 success_covered=100.0%
+ISMMIGIIGMMGGGRGRTRMRRPMMRRRMYRMY
+>rank042 score=0.681998 composite=0.674994 mic_term=0.703012 len=32 charge=+9.00 mic_gram_neg=12.42ug/mL identity_to_reference=0.3438 identity_to_selected=0.3125 mic50=3.3uM mic90=5.78uM hc50=36.07uM safety_window=10.92 success_covered=91.7%
+FISIGRSRFMSSMAAGKSIIRKSPTRPTMRKR
+>rank043 score=0.681327 composite=0.674118 mic_term=0.702952 len=23 charge=+8.10 mic_gram_neg=12.42ug/mL identity_to_reference=0.4348 identity_to_selected=0.4 mic50=4.03uM mic90=5.99uM hc50=38.3uM safety_window=9.51 success_covered=100.0%
+RGIHMIGMWIMRIYRRRRMRTRT
+>rank044 score=0.680973 composite=0.654658 mic_term=0.759918 len=26 charge=+9.00 mic_gram_neg=9.55ug/mL identity_to_reference=0.4231 identity_to_selected=0.4231 mic50=3.01uM mic90=7.18uM hc50=60.8uM safety_window=20.19 success_covered=100.0%
+SWIIGGSSFIRKGKSRGRTRRRSIGR
+>rank045 score=0.680787 composite=0.670727 mic_term=0.710967 len=37 charge=+9.20 mic_gram_neg=11.97ug/mL identity_to_reference=0.3023 identity_to_selected=0.3514 mic50=2.23uM mic90=4.84uM hc50=19.66uM safety_window=8.81 success_covered=100.0%
+INKSIFRKRKNIFGKFIHVKNNATTNSTTIRLIHNRI
+>rank046 score=0.680758 composite=0.672505 mic_term=0.705517 len=31 charge=+9.20 mic_gram_neg=12.27ug/mL identity_to_reference=0.3243 identity_to_selected=0.2941 mic50=3.42uM mic90=7.1uM hc50=45.21uM safety_window=13.22 success_covered=100.0%
+KHMGGMMKYMTVTATGVAVKVKHNKRKVKVK
+>rank047 score=0.680678 composite=0.675807 mic_term=0.69529 len=27 charge=+9.10 mic_gram_neg=12.87ug/mL identity_to_reference=0.3704 identity_to_selected=0.4545 mic50=3.46uM mic90=6.03uM hc50=27.64uM safety_window=7.99 success_covered=100.0%
+SIMMWMRMFRIMGRMRHRMRMRSSRAR
+>rank048 score=0.680574 composite=0.670116 mic_term=0.711948 len=29 charge=+9.10 mic_gram_neg=11.92ug/mL identity_to_reference=0.3448 identity_to_selected=0.4545 mic50=3.05uM mic90=6.01uM hc50=31.39uM safety_window=10.31 success_covered=100.0%
+SMMIGRMGMRFRHYMRMRMRGRTRMRTNT
+>rank049 score=0.680473 composite=0.672435 mic_term=0.704586 len=25 charge=+9.00 mic_gram_neg=12.33ug/mL identity_to_reference=0.3667 identity_to_selected=0.5172 mic50=3.96uM mic90=6.68uM hc50=36.74uM safety_window=9.27 success_covered=100.0%
+MSMISMWSMRARMRMRRRMRTRMRM
+>rank050 score=0.680276 composite=0.686722 mic_term=0.660936 len=23 charge=+8.00 mic_gram_neg=15.07ug/mL identity_to_reference=0.4 identity_to_selected=0.3571 mic50=5.85uM mic90=9.18uM hc50=92.04uM safety_window=15.75 success_covered=100.0%
+ISSMISTMIKGMVKKMVWKKRKK
+>rank051 score=0.680204 composite=0.669744 mic_term=0.711584 len=26 charge=+9.10 mic_gram_neg=11.94ug/mL identity_to_reference=0.3462 identity_to_selected=0.4643 mic50=3.6uM mic90=7.29uM hc50=62.11uM safety_window=17.23 success_covered=100.0%
+MIIMIRHMKKRMRFKSRSSSSVSRGR
+>rank052 score=0.679986 composite=0.667473 mic_term=0.717523 len=27 charge=+9.00 mic_gram_neg=11.61ug/mL identity_to_reference=0.4138 identity_to_selected=0.4545 mic50=3.7uM mic90=6.4uM hc50=40.11uM safety_window=10.83 success_covered=100.0%
+SSMGGRGFPTGRSRWVMMRRRMRMRMR
+>rank053 score=0.679882 composite=0.676872 mic_term=0.688913 len=29 charge=+9.20 mic_gram_neg=13.25ug/mL identity_to_reference=0.3793 identity_to_selected=0.4483 mic50=3.52uM mic90=6.4uM hc50=65.71uM safety_window=18.68 success_covered=100.0%
+GMFTSIFSSIIRKIRKMHTNKKKHKGKSM
+>rank054 score=0.679875 composite=0.660274 mic_term=0.738678 len=28 charge=+9.10 mic_gram_neg=10.54ug/mL identity_to_reference=0.3929 identity_to_selected=0.4286 mic50=2.86uM mic90=6.36uM hc50=43.22uM safety_window=15.12 success_covered=100.0%
+GFGSGIFIVISHRGRTIVRKRRRGMRSR
+>rank055 score=0.679852 composite=0.669843 mic_term=0.709881 len=28 charge=+9.10 mic_gram_neg=12.03ug/mL identity_to_reference=0.3571 identity_to_selected=0.4286 mic50=2.95uM mic90=6.29uM hc50=26.39uM safety_window=8.96 success_covered=100.0%
+MMIMIMISGRHMRKRIKGKRRMMGRFMM
+>rank056 score=0.679757 composite=0.654729 mic_term=0.754839 len=30 charge=+9.00 mic_gram_neg=9.78ug/mL identity_to_reference=0.3667 identity_to_selected=0.4 mic50=2.58uM mic90=5.61uM hc50=28.86uM safety_window=11.19 success_covered=91.7%
+IRMSIGRGIFSRSYSGGRGRIRTSRRRMVA
+>rank057 score=0.67916 composite=0.675742 mic_term=0.689413 len=31 charge=+9.10 mic_gram_neg=13.22ug/mL identity_to_reference=0.3871 identity_to_selected=0.6129 mic50=2.98uM mic90=5.09uM hc50=16.51uM safety_window=5.55 success_covered=100.0%
+MSWMISFSMPSMMWMIRRMRRMRHRMRTRMR
+>rank058 score=0.679139 composite=0.678818 mic_term=0.680103 len=25 charge=+9.10 mic_gram_neg=13.8ug/mL identity_to_reference=0.44 identity_to_selected=0.4 mic50=5.16uM mic90=6.82uM hc50=50.63uM safety_window=9.81 success_covered=100.0%
+SWMMWIKIMIKGRAAMKKHKKRAMK
+>rank059 score=0.679019 composite=0.669096 mic_term=0.708789 len=29 charge=+9.00 mic_gram_neg=12.09ug/mL identity_to_reference=0.3448 identity_to_selected=0.3103 mic50=4.12uM mic90=6.93uM hc50=54.79uM safety_window=13.31 success_covered=91.7%
+WRTMTTRAARGRKTNKRNGMFKGGKGMGI
+>rank060 score=0.678905 composite=0.648047 mic_term=0.77148 len=41 charge=+9.00 mic_gram_neg=9.06ug/mL identity_to_reference=0.3415 identity_to_selected=0.2927 mic50=1.45uM mic90=3.02uM hc50=8.46uM safety_window=5.83 success_covered=100.0%
+SGWSRPRWSRWIRTIRSRSSRSFSRFGVVAGKGSSNGVAGG
+>rank061 score=0.678854 composite=0.700326 mic_term=0.614438 len=21 charge=+7.20 mic_gram_neg=18.67ug/mL identity_to_reference=0.381 identity_to_selected=0.3478 mic50=6.36uM mic90=9.14uM hc50=74.93uM safety_window=11.77 success_covered=100.0%
+MMSRMVHHMRRIWKIGKSIKR
+>rank062 score=0.678755 composite=0.671704 mic_term=0.699907 len=22 charge=+8.00 mic_gram_neg=12.59ug/mL identity_to_reference=0.4545 identity_to_selected=0.4615 mic50=4.32uM mic90=6.79uM hc50=73.47uM safety_window=16.99 success_covered=100.0%
+IIISIRNIRKWKGKKRAINKII
+>rank063 score=0.67874 composite=0.674555 mic_term=0.691294 len=27 charge=+9.30 mic_gram_neg=13.1ug/mL identity_to_reference=0.3333 identity_to_selected=0.3704 mic50=4.47uM mic90=7.65uM hc50=80.0uM safety_window=17.91 success_covered=100.0%
+SWMSKIMISHKHTKMRIIKMSRKRHRV
+>rank064 score=0.678651 composite=0.678404 mic_term=0.67939 len=29 charge=+9.30 mic_gram_neg=13.84ug/mL identity_to_reference=0.3793 identity_to_selected=0.3448 mic50=3.92uM mic90=8.38uM hc50=69.54uM safety_window=17.74 success_covered=100.0%
+MPSMWFKSKRSIIKGMIIKHRMIKHKHKN
+>rank065 score=0.678293 composite=0.672254 mic_term=0.696412 len=28 charge=+9.20 mic_gram_neg=12.8ug/mL identity_to_reference=0.3214 identity_to_selected=0.3214 mic50=3.58uM mic90=6.58uM hc50=54.48uM safety_window=15.22 success_covered=100.0%
+IRMRHIIRKRHIVIMNIGMIKTKFTKAK
+>rank066 score=0.678169 composite=0.658963 mic_term=0.735788 len=32 charge=+9.10 mic_gram_neg=10.68ug/mL identity_to_reference=0.3125 identity_to_selected=0.4062 mic50=2.86uM mic90=4.51uM hc50=16.78uM safety_window=5.87 success_covered=100.0%
+SSMIWGMISGRHYRRRYMMSSMIMVRRGRPRR
+>rank067 score=0.678113 composite=0.64514 mic_term=0.777034 len=30 charge=+9.10 mic_gram_neg=8.83ug/mL identity_to_reference=0.3667 identity_to_selected=0.4 mic50=2.03uM mic90=3.11uM hc50=13.98uM safety_window=6.89 success_covered=100.0%
+WISIIRGIASRSSRRGRTVRRWWMRWYHRM
+>rank068 score=0.678096 composite=0.686147 mic_term=0.653944 len=20 charge=+7.00 mic_gram_neg=15.56ug/mL identity_to_reference=0.4 identity_to_selected=0.44 mic50=6.43uM mic90=7.86uM hc50=58.11uM safety_window=9.03 success_covered=100.0%
+MSRMIRRYWTRMRIRGRTMT
+>rank069 score=0.678031 composite=0.684886 mic_term=0.657465 len=24 charge=+8.00 mic_gram_neg=15.31ug/mL identity_to_reference=0.375 identity_to_selected=0.48 mic50=5.01uM mic90=7.22uM hc50=32.36uM safety_window=6.46 success_covered=100.0%
+AFSRSMRRMNRRMRMRRIIITNMM
+>rank070 score=0.677924 composite=0.684667 mic_term=0.657694 len=22 charge=+8.00 mic_gram_neg=15.3ug/mL identity_to_reference=0.4091 identity_to_selected=0.5 mic50=5.76uM mic90=8.59uM hc50=64.84uM safety_window=11.26 success_covered=100.0%
+MSRMIRRFPMSWMRRASRRRST
+>rank071 score=0.677845 composite=0.677744 mic_term=0.678146 len=34 charge=+9.00 mic_gram_neg=13.92ug/mL identity_to_reference=0.4118 identity_to_selected=0.2941 mic50=3.8uM mic90=6.04uM hc50=22.23uM safety_window=5.86 success_covered=91.7%
+SRMAFNVAARKSARTGASRAAARVKNWRMNPNGR
+>rank072 score=0.677595 composite=0.659325 mic_term=0.732402 len=31 charge=+9.00 mic_gram_neg=10.84ug/mL identity_to_reference=0.2903 identity_to_selected=0.3548 mic50=2.84uM mic90=4.65uM hc50=27.46uM safety_window=9.67 success_covered=91.7%
+ITMYPTMRSNIFRYITKRTKRKRTMFKGMII
+>rank073 score=0.677552 composite=0.641608 mic_term=0.785384 len=32 charge=+10.10 mic_gram_neg=8.5ug/mL identity_to_reference=0.3529 identity_to_selected=0.4375 mic50=1.99uM mic90=4.32uM hc50=13.13uM safety_window=6.61 success_covered=100.0%
+SMMTMIRGMRRMYRMMRRMMRSRRHRGGMGMM
+>rank074 score=0.677462 composite=0.650727 mic_term=0.757668 len=36 charge=+9.00 mic_gram_neg=9.65ug/mL identity_to_reference=0.3611 identity_to_selected=0.3611 mic50=1.97uM mic90=3.43uM hc50=10.1uM safety_window=5.14 success_covered=91.7%
+SGMIIIMIIGKFKNGGRMFTYFFRSTVRKRKNMSRG
+>rank075 score=0.67735 composite=0.656735 mic_term=0.739198 len=33 charge=+9.20 mic_gram_neg=10.51ug/mL identity_to_reference=0.3636 identity_to_selected=0.4848 mic50=2.68uM mic90=5.83uM hc50=18.34uM safety_window=6.84 success_covered=100.0%
+MSMGHRGYMGGRMRTRMRMYSRMIRGMHTRTRM
+>rank076 score=0.677343 composite=0.652412 mic_term=0.752135 len=26 charge=+9.00 mic_gram_neg=9.9ug/mL identity_to_reference=0.3462 identity_to_selected=0.3929 mic50=4.07uM mic90=7.85uM hc50=101.0uM safety_window=24.84 success_covered=91.7%
+SGMIRWRKGYGRKRGRTTNTKRTTLG
+>rank077 score=0.677163 composite=0.663442 mic_term=0.718325 len=32 charge=+9.10 mic_gram_neg=11.57ug/mL identity_to_reference=0.375 identity_to_selected=0.4062 mic50=2.59uM mic90=5.42uM hc50=29.64uM safety_window=11.45 success_covered=91.7%
+FSIIWHIRGSPNNIIGRKINRTFRGRMSRSRR
+>rank078 score=0.677041 composite=0.683914 mic_term=0.656424 len=23 charge=+8.10 mic_gram_neg=15.39ug/mL identity_to_reference=0.3913 identity_to_selected=0.4348 mic50=5.54uM mic90=7.38uM hc50=76.23uM safety_window=13.76 success_covered=100.0%
+IRMMTFSRHSVKRWSIRTVRIRK
+>rank079 score=0.676969 composite=0.673456 mic_term=0.687507 len=17 charge=+6.00 mic_gram_neg=13.33ug/mL identity_to_reference=0.4762 identity_to_selected=0.381 mic50=5.88uM mic90=7.95uM hc50=64.09uM safety_window=10.89 success_covered=100.0%
+GIRIGIRIGRKIRRGYM
+>rank080 score=0.676968 composite=0.650983 mic_term=0.754922 len=26 charge=+10.00 mic_gram_neg=9.78ug/mL identity_to_reference=0.3846 identity_to_selected=0.4194 mic50=2.78uM mic90=5.78uM hc50=47.47uM safety_window=17.1 success_covered=100.0%
+MIMISFKMMSNSFRKSRSVKRRVRRR
+>rank081 score=0.676926 composite=0.649909 mic_term=0.757977 len=25 charge=+9.00 mic_gram_neg=9.64ug/mL identity_to_reference=0.44 identity_to_selected=0.4839 mic50=3.17uM mic90=6.61uM hc50=39.38uM safety_window=12.4 success_covered=100.0%
+SGMIFISGMMGIGRGRMRVRRRRRR
+>rank082 score=0.676925 composite=0.667471 mic_term=0.705287 len=25 charge=+9.00 mic_gram_neg=12.29ug/mL identity_to_reference=0.3704 identity_to_selected=0.3929 mic50=4.04uM mic90=8.02uM hc50=92.39uM safety_window=22.87 success_covered=91.7%
+SFISNAIMSGSIIKRKSRRGKFKRK
+>rank083 score=0.676785 composite=0.658886 mic_term=0.730481 len=26 charge=+9.00 mic_gram_neg=10.94ug/mL identity_to_reference=0.3846 identity_to_selected=0.5 mic50=3.22uM mic90=6.22uM hc50=32.21uM safety_window=9.99 success_covered=100.0%
+MGIMPFMRMRMRRRTRMRRIIIGRGI
+>rank084 score=0.676561 composite=0.644782 mic_term=0.771897 len=38 charge=+10.10 mic_gram_neg=9.04ug/mL identity_to_reference=0.2895 identity_to_selected=0.2895 mic50=1.85uM mic90=3.59uM hc50=22.94uM safety_window=12.41 success_covered=100.0%
+SWFKSVVAWGKPNIVSKKINSTKTKHLSTRITRRIRTI
+>rank085 score=0.676456 composite=0.666935 mic_term=0.705018 len=38 charge=+9.30 mic_gram_neg=12.3ug/mL identity_to_reference=0.2895 identity_to_selected=0.3684 mic50=2.36uM mic90=4.76uM hc50=16.08uM safety_window=6.81 success_covered=100.0%
+HSISKHHMSSMMWFSSGPKSRMSTMVRMRTRIRVSRRW
+>rank086 score=0.676414 composite=0.657841 mic_term=0.732132 len=38 charge=+9.10 mic_gram_neg=10.86ug/mL identity_to_reference=0.2895 identity_to_selected=0.3947 mic50=1.96uM mic90=2.8uM hc50=8.56uM safety_window=4.36 success_covered=100.0%
+IIMSFSMVHMAYNMIRMSIIRKIPRGWMRTFRSRARTR
+>rank087 score=0.676288 composite=0.637061 mic_term=0.793967 len=27 charge=+10.10 mic_gram_neg=8.17ug/mL identity_to_reference=0.4444 identity_to_selected=0.4444 mic50=1.98uM mic90=3.98uM hc50=27.96uM safety_window=14.15 success_covered=100.0%
+SFIHMIIIMIRIIRKIIKKMKRGKRRM
+>rank088 score=0.676204 composite=0.691994 mic_term=0.628832 len=17 charge=+6.10 mic_gram_neg=17.47ug/mL identity_to_reference=0.4706 identity_to_selected=0.5294 mic50=7.07uM mic90=11.5uM hc50=121.86uM safety_window=17.25 success_covered=100.0%
+GIRKIRMIGKSIHRGWR
+>rank089 score=0.676121 composite=0.643326 mic_term=0.774506 len=26 charge=+9.00 mic_gram_neg=8.93ug/mL identity_to_reference=0.4615 identity_to_selected=0.3462 mic50=3.27uM mic90=8.05uM hc50=82.26uM safety_window=25.12 success_covered=100.0%
+GRIIWSRIGGRNYRSRSKGGRGKTKG
+>rank090 score=0.676103 composite=0.659003 mic_term=0.727404 len=29 charge=+9.10 mic_gram_neg=11.1ug/mL identity_to_reference=0.3448 identity_to_selected=0.3448 mic50=2.89uM mic90=4.63uM hc50=28.39uM safety_window=9.82 success_covered=100.0%
+IIIRKHMMRKRKVKMIKSIIMNIINMINR
+>rank091 score=0.676067 composite=0.703413 mic_term=0.594031 len=21 charge=+7.00 mic_gram_neg=20.51ug/mL identity_to_reference=0.4286 identity_to_selected=0.4545 mic50=8.29uM mic90=10.91uM hc50=94.91uM safety_window=11.45 success_covered=91.7%
+MSIMIPFSRWIKNKRKKAARG
+>rank092 score=0.676 composite=0.673685 mic_term=0.682947 len=29 charge=+9.20 mic_gram_neg=13.62ug/mL identity_to_reference=0.3824 identity_to_selected=0.5172 mic50=3.24uM mic90=6.43uM hc50=26.2uM safety_window=8.09 success_covered=100.0%
+GTMFMSMGMRSRRWMRMRMRVRHHMRMRM
+>rank093 score=0.675996 composite=0.676727 mic_term=0.673805 len=25 charge=+9.00 mic_gram_neg=14.2ug/mL identity_to_reference=0.36 identity_to_selected=0.4 mic50=5.29uM mic90=9.41uM hc50=52.43uM safety_window=9.9 success_covered=100.0%
+SSFMIVMNMAMRRNAARKRKRMRVK
+>rank094 score=0.675858 composite=0.644534 mic_term=0.76983 len=27 charge=+9.10 mic_gram_neg=9.13ug/mL identity_to_reference=0.4074 identity_to_selected=0.4074 mic50=3.61uM mic90=7.85uM hc50=60.24uM safety_window=16.71 success_covered=100.0%
+GGHGGWMGGKSIGRGGRRTYMRTRKRR
+>rank095 score=0.675796 composite=0.665316 mic_term=0.707237 len=22 charge=+8.00 mic_gram_neg=12.18ug/mL identity_to_reference=0.4545 identity_to_selected=0.56 mic50=5.06uM mic90=9.87uM hc50=61.88uM safety_window=12.23 success_covered=100.0%
+GRSSVIRGMGMRRAGRRRARVM
+>rank096 score=0.675725 composite=0.650164 mic_term=0.752409 len=25 charge=+10.10 mic_gram_neg=9.89ug/mL identity_to_reference=0.44 identity_to_selected=0.4828 mic50=2.74uM mic90=6.04uM hc50=43.78uM safety_window=16.0 success_covered=100.0%
+HMMRIIPRMRPMRRRWMRMRTRFMR
+>rank097 score=0.675401 composite=0.639958 mic_term=0.781729 len=25 charge=+9.00 mic_gram_neg=8.64ug/mL identity_to_reference=0.4 identity_to_selected=0.4444 mic50=3.16uM mic90=5.82uM hc50=38.44uM safety_window=12.16 success_covered=100.0%
+YRMYRMGRTSVRRWVGMGRMRTRTR
+>rank098 score=0.675275 composite=0.655772 mic_term=0.733784 len=25 charge=+9.00 mic_gram_neg=10.78ug/mL identity_to_reference=0.4 identity_to_selected=0.52 mic50=3.83uM mic90=7.12uM hc50=77.75uM safety_window=20.31 success_covered=100.0%
+SGMIRNSRMSISRMRWRYRTRTRTR
+>rank099 score=0.675163 composite=0.63853 mic_term=0.785063 len=26 charge=+10.10 mic_gram_neg=8.51ug/mL identity_to_reference=0.3846 identity_to_selected=0.4231 mic50=3.05uM mic90=6.22uM hc50=50.13uM safety_window=16.45 success_covered=100.0%
+ITMRRAGHMAMIIGNYRRRTRRRTKR
+>rank100 score=0.675148 composite=0.65049 mic_term=0.749124 len=33 charge=+9.10 mic_gram_neg=10.04ug/mL identity_to_reference=0.3333 identity_to_selected=0.4848 mic50=2.31uM mic90=3.93uM hc50=10.09uM safety_window=4.37 success_covered=100.0%
+SGMMGIMGYMGRGMRRRHRMRTYRMRMRIIIMM

@@ -100,18 +100,21 @@ git ls-files --eol generate/    # expect w/lf, not w/crlf
 ## 5. Regenerate the score tables
 
 The entry point writes only the two FASTA files the challenge asks for, so the
-numbers behind the ordering are not recoverable from its output. Two scripts
-write them out. Both are deterministic and both read `generate/library.fasta`,
-so run them after step 3.
+numbers behind the ordering are not recoverable from its output. Three scripts
+write them out, all deterministic. Run them after step 3, and in this order:
+`export_ranking.py` reads `generate/library.fasta`, and the other two read what
+it produces.
 
 ```bash
 uv run python scripts/export_ranking.py     # generate/ranking_top100.csv, rewrites top.fasta
 uv run python scripts/wetlab_panel.py       # generate/wetlab_panel_top100.csv
+uv run python scripts/ranked_fasta.py       # generate/top100_ranked.fasta
 ```
 
 ```
 1a735b092dc7b394c870b8249c62ae6c78d6ccb977b9c831f2217cffa2814504  generate/ranking_top100.csv
 9737fd0bb0f5e402830363c3f1c6bd9c1fa035450e223ada8d8ade46c07b3548  generate/wetlab_panel_top100.csv
+ab7a2375c82c0e2859f8b8529cd9511975175b0c3020018435e67830591a0407  generate/top100_ranked.fasta
 ```
 
 | script | measured | peak memory | writes |
@@ -119,6 +122,7 @@ uv run python scripts/wetlab_panel.py       # generate/wetlab_panel_top100.csv
 | `export_ranking.py` | 1 min 28 s | 788 MB | `top.fasta`, `ranking_top100.csv` |
 | `export_ranking.py --full` | 1 min 32 s | 788 MB | the above plus `ranking_library.csv`, 50,000 rows |
 | `wetlab_panel.py` | 0.1 s | 34 MB | `wetlab_panel_top100.csv` |
+| `ranked_fasta.py` | instant | 20 MB | `top100_ranked.fasta` |
 
 `export_ranking.py` re-runs the ranking and the diversity walk independently of
 the entry point and writes `top.fasta` again; it must reproduce the same 100
@@ -126,6 +130,13 @@ sequences in the same order, which is a second, independent check on step 4.
 Almost all of its time is the identity walk against the 39,448 references, which
 is why `--full` costs only four seconds more. `ranking_library.csv` is not
 committed, since it is derivable from what is.
+
+`ranked_fasta.py` writes the submitted 100 again with the score, its components
+and the panel values on each header line, for reading the list by hand. It is
+the same sequences in the same order as `generate/top.fasta`, and it refuses to
+write if that is not true. `top.fasta` remains the submitted file: it carries
+bare `>seqN` headers, it is what the challenge reads, and it is the one the
+checksums above cover. Do not substitute the annotated copy for it.
 
 `wetlab_panel.py` is fast because it is linear algebra on short feature vectors:
 two fitted regressions over fifteen and sixteen descriptors, for a hundred

@@ -75,7 +75,9 @@ Measured on the files in `generate/`, which are the output of the command above.
 `generate/ranking_top100.csv` carries one row per selected peptide with every
 term of the composite, the MIC predictions and the two identity margins that
 decided admission. `generate/wetlab_panel_top100.csv` converts the predictions
-to uM against the wet-lab panel.
+to uM against the wet-lab panel. `generate/top100_ranked.fasta` is the same 100
+sequences in the same order as `generate/top.fasta`, with those numbers carried
+on the FASTA header lines; `top.fasta` itself stays as the submitted file.
 
 ## Training data
 
@@ -178,6 +180,7 @@ data/training/                       the sequences the two checkpoints were fitt
 data/external/                       the fitted MIC and haemolysis coefficients
 generate/library.fasta               the submitted 50,000
 generate/top.fasta                   the submitted 100, in rank order
+generate/top100_ranked.fasta         the same 100 with the scores in the FASTA headers
 generate/ranking_top100.csv          every score behind the ordering
 generate/wetlab_panel_top100.csv     the same 100 against the wet-lab panel, in uM
 src/amp_challenge_2027/generate.py   entry point
@@ -185,6 +188,7 @@ src/amp_challenger/                  scoring and compliance modules
 src/peptide_gen/                     model definitions for the two checkpoints
 scripts/export_ranking.py            rebuilds the ranking tables from the library
 scripts/wetlab_panel.py              rebuilds the panel table
+scripts/ranked_fasta.py              rebuilds the annotated FASTA
 scripts/verify_submission.py         the challenge validator, unmodified
 ```
 
